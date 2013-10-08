@@ -2,12 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
-group :development, :test do
+group :test, :development do
   gem 'minitest-rails'
-end
-
-group :test do
   gem 'minitest-rails-capybara'
+  gem 'minitest-colorize'
+  gem 'minitest-focus'
 end
 
 # Bundle edge Rails instead:
