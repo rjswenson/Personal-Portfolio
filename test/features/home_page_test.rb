@@ -2,8 +2,8 @@ require "test_helper"
 
 describe "The static home page" do
   it "exists" do
-    visit('/localhost:3000/index')
-    page.text.include("home")
+    visit "http://localhost:3000"
+    page.text.must_include "Home"
   end
 end
 
