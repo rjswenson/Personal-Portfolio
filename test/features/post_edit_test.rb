@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "Editting an existing post" do
   scenario "with valid changes" do
-    #Post.create(title: posts(:fp).title, body: posts(:fp).body)
+
     visit posts_path
 
     click_on 'Edit'
