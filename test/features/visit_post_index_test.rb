@@ -11,11 +11,11 @@ feature "The posts index" do
   end
 
   scenario "it contains added posts" do
-    Post.create(title: "Becoming a Code Fellow",
-      body: "I worked really hard and now I win.")
+    Post.create(title: posts(:fp).title,
+      body: posts(:fp).body)
     visit posts_path
 
-    page.text.must_include "Becoming a Code Fellow"
-    page.text.must_include "really hard"
+    page.text.must_include posts(:fp).title
+    page.text.must_include posts(:fp).body
   end
 end

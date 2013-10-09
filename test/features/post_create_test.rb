@@ -4,13 +4,13 @@ feature "posting with valid information" do
   scenario "fill in and submit a new post" do
     visit posts_path
     click_on 'New Post'
-    fill_in 'Title', with: "A sample title"
-    fill_in 'Body', with: "Here is some content!"
+    fill_in 'Title', with: posts(:fp).title
+    fill_in 'Body', with: posts(:fp).body
     click_on 'Create Post'
 
     page.text.must_include "Post was successfully created"
-    page.text.must_include "A sample title"
-    page.text.must_include "Here is some content!"
+    page.text.must_include posts(:fp).title
+    page.text.must_include posts(:fp).body
   end
 end
 
