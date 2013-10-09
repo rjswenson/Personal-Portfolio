@@ -1,12 +1,12 @@
 require "test_helper"
 
-describe "The static home page" do
-  it "exists" do
-    visit "http://localhost:3000"
+feature "The static home page" do
+  scenario "exists" do
+    visit root_path
     page.text.must_include "Home"
   end
-  it "has a functioning title" do
-    visit "http://localhost:3000"
+  scenario "has a functioning title" do
+    visit root_path
     page.text.must_include "Portfolio"
   end
 end

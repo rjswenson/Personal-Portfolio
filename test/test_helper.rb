@@ -14,10 +14,9 @@ require "minitest/pride"
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   fixtures :all
-
+  include Capybara::DSL
   # Add more helper methods to be used by all tests here...
 end
-include Capybara::DSL
 # class ActionDispatch::IntegrationTest
 #   include Rails.application.routes.url_helpers
 #   include Capybara::DSL
