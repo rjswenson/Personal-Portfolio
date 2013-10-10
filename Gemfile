@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
-gem 'turn'
 
 group :test, :development do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'minitest-colorize'
   gem 'minitest-focus'
+  gem 'turn'
 end
 
 # Bundle edge Rails instead:
