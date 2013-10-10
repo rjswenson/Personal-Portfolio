@@ -2,6 +2,6 @@
   title: My first post
   body: Example details of post
 
-# second_post:
-#   title: I did it again
-#   body: Good job everyone
+sp:
+  title: I did it again
+  body: Good job everyone

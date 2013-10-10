@@ -3,7 +3,7 @@ require "test_helper"
 feature "Editting an existing post" do
   scenario "with valid changes" do
 
-    visit posts_path
+    visit post_path(posts(:fp).id)
 
     click_on 'Edit'
     fill_in 'Title', with: "New Adventures"
