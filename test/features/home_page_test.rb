@@ -9,5 +9,9 @@ feature "The static home page" do
     visit root_path
     page.text.must_include "Portfolio"
   end
+  scenario "deploys correctly via Heroku" do
+    visit "http://robin-portfolio.herokuapp.com"
+    page.text.must_include "Portfolio"
+  end
 end
 
