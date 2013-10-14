@@ -15,8 +15,8 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Project was successfully added."
       redirect_to @project
     else
-      flash[:alert] = "Warning: Project not added."
-      new_projects_path
+      flash[:alert] = "Project could not be saved."
+      render :new
     end
   end
 
