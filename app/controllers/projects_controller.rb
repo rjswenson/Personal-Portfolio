@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update_attributes(params[:project])
+    if @project.update_attributes(params[:project]) && @project.save
       flash[:notice] = "Project was successfully updated."
       redirect_to @project
     else
