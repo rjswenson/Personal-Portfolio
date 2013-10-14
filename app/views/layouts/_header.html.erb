@@ -10,24 +10,24 @@
                         <span class="icon-bar"></span>
                     </a>
                     <h1>
-                        <a class="brand" href="index.html">Andia - a super cool design agency...</a>
+                        <a class="brand" href="index.html">Epic Robin</a>
                     </h1>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
-                            <li class="current-page">
-                                <a href="index.html"><i class="icon-home"></i><br />Home</a>
+                            <li>
+                                <%= link_to image_tag("Home.png", alt: "home", :size => "30x30"), root_path %>
                             </li>
                             <li>
-                                <a href="portfolio.html"><i class="icon-camera"></i><br />Portfolio</a>
+                                <%= link_to image_tag("Blog.png", alt: "blog", :size => "30x30"), posts_path %>
                             </li>
                             <li>
-                                <a href="#"><i class="icon-comments"></i><br />Blog</a>
+                                <%= link_to image_tag("Portfolio.png", :size => "30x30", alt: "portfolio"), "#" %>
                             </li>
                             <li>
-                                <a href="about.html"><i class="icon-user"></i><br />About</a>
+                                <%= link_to image_tag("About.png", :size => "30x30", alt: "about"), "#" %>
                             </li>
                             <li>
-                                <a href="contact.html"><i class="icon-envelope-alt"></i><br />Contact</a>
+                                <%= link_to image_tag("Contact.png", :size => "30x30", alt: "contact"), "#" %>
                             </li>
                         </ul>
                     </div>

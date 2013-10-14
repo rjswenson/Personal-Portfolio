@@ -5,6 +5,8 @@ gem 'rails', '3.2.14'
 gem 'sass-rails', '>=3.2' # sass-rails needs to be higher than 3.2
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'minitest-rails'
+gem 'font-awesome-sass-rails'
+gem 'flexslider'
 
 group :test, :development do
   gem 'minitest-rails-capybara'
