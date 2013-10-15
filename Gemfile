@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'minitest-rails'
 gem 'font-awesome-sass-rails'
 gem 'flexslider'
+gem "devise", "~> 3.1.1"
 
 group :test, :development do
   gem 'minitest-rails-capybara'
