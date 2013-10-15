@@ -39,4 +39,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    if true #for future admin control
+      Project.find(params[:id]).destroy
+      flash[:success] = "Project was successfully deleted."
+      redirect_to projects_path
+    else
+      redirect_to root_path
+    end
+  end
+
 end
