@@ -1,0 +1,7 @@
+# user1:
+#   email: email1@example.com
+#   encrypted_password: password1234
+
+# user2:
+#   email: sample@gmail.com
+#   encrypted_password: examplepassword

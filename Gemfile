@@ -15,6 +15,7 @@ group :test, :development do
   gem 'minitest-focus'
   gem 'turn'
   gem 'sqlite3'
+  gem 'launchy'
 end
 
 # Bundle edge Rails instead:
