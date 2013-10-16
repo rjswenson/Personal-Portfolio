@@ -16,3 +16,4 @@ feature "signing out" do
     page.text.must_include "Sign up"
   end
 end
+
