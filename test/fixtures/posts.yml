@@ -1,7 +1,4 @@
  fp:
   title: My first post
   body: Example details of post
-
-sp:
-  title: I did it again
-  body: Good job everyone
+  author: one

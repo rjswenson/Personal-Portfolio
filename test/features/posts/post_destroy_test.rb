@@ -3,6 +3,8 @@ require "test_helper"
 feature "destroying a current post" do
   scenario "successfully destroyed post" do
 
+    sign_in
+
     visit posts_path
     click_on 'Destroy'
 
