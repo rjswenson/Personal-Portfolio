@@ -18,6 +18,7 @@
       "/Users/robin/dev/Code_Fellows/portfolio/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
         null
       ],
       "/Users/robin/dev/Code_Fellows/portfolio/app/helpers/application_helper.rb": [
@@ -209,8 +210,61 @@
         null,
         null,
         null
+      ],
+      "/Users/robin/dev/Code_Fellows/portfolio/app/policies/application_policy.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/robin/dev/Code_Fellows/portfolio/app/policies/post_policy.rb": [
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1382040277
+    "timestamp": 1382292724
   }
 }
