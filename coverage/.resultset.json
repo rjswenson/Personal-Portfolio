@@ -13,12 +13,29 @@
         null,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/robin/dev/Code_Fellows/portfolio/app/controllers/application_controller.rb": [
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/robin/dev/Code_Fellows/portfolio/app/helpers/application_helper.rb": [
@@ -49,7 +66,6 @@
         null,
         1,
         8,
-        null,
         8,
         8,
         8,
@@ -87,7 +103,7 @@
         null,
         1,
         1,
-        null,
+        1,
         1,
         1,
         2,
@@ -134,6 +150,11 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/robin/dev/Code_Fellows/portfolio/app/controllers/projects_controller.rb": [
@@ -259,12 +280,28 @@
         1,
         1,
         0,
+        0,
         null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1382292724
+    "timestamp": 1382299202
   }
 }
