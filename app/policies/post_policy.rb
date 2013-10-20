@@ -10,4 +10,14 @@ class PostPolicy < ApplicationPolicy
     if user.present?
     user.author? || user.editor?
   end
+
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.author? || user.editor?
+        scope
+      else
+        scope.where(published: true)
+      end
+    end
+  end
 end
