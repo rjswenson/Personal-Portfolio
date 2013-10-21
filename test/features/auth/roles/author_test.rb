@@ -33,13 +33,10 @@ feature "A user is flagged as author" do
   end
 
   scenario "they CANT publish their posts" do
-    pending
-    # they shouldn't see a checkbox
-    # sign_in(users(:author))
+    sign_in(users(:author))
+    visit post_path(posts(:unpub).id)
 
-    # visit edit_post_path(posts(:unpub))
-    # clicking the checkbox
-    # page.check('Published')
+    page.text.wont_include "Publish"
 
   end
 

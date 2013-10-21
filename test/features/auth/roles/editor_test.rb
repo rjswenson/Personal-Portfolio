@@ -34,18 +34,17 @@ feature "A user is flagged as editor" do
   end
 
   scenario "they can publish posts" do
-    skip
-    # sign_in(users(:editor))
+    sign_in(users(:editor))
 
-    # p = Post.create(title: "One", body: "Yup",
-    #                     published: false)
+    visit edit_post_path(posts(:unpub))
+    page.check("Publish")
+    click_on("Update Post")
 
-    # p.publish!
+    click_link("Sign out")
+    visit posts_path
 
-    # visit posts_path
-
-    # page.text.must_include "One"
-    # page.text.must_include "Yup"
+    page.text.must_include "#{posts(:unpub).title}"
+    page.text.must_include "#{posts(:unpub).body}"
   end
 
   scenario "they can edit posts" do
