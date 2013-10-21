@@ -11,6 +11,8 @@ gem "devise", "~> 3.1.1"
 gem "simplecov", :require => false, :group => :test
 gem "pundit"
 gem "faker"
+gem "omniauth-twitter"
+gem "figaro"
 
 group :test, :development do
   gem 'minitest-rails-capybara'
