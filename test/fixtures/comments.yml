@@ -1,0 +1,24 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  author: MyString
+  author_url: MyString
+  author_email: MyString
+  user_ip: MyString
+  user_agent: MyString
+  referrer: MyString
+  content: MyText
+  approved: false
+  post: 
+
+two:
+  author: MyString
+  author_url: MyString
+  author_email: MyString
+  user_ip: MyString
+  user_agent: MyString
+  referrer: MyString
+  content: MyText
+  approved: false
+  post: 

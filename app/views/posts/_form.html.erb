@@ -19,10 +19,10 @@
     <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
-  <% if policy(Post).publish? %>
+  <% if policy(Comment).publish? %>
     <div class="field">
-      <%= f.label :published %>
-      <%= f.check_box :published %>
+      <%= f.label :published_comment %>
+      <%= f.check_box :published_comment %>
     </div>
   <% end %>
   <div class="actions">

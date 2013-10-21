@@ -20,7 +20,7 @@ class PostPolicy < ApplicationPolicy
 
   def create?
     if user.present?
-    user.author? || user.editor?
+      user.author? || user.editor?
     end
   end
   alias_method :update?, :create?
