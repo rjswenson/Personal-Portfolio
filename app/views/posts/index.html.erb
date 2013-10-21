@@ -13,18 +13,27 @@
   <tr>
     <td><%= post.title %></td>
     <td><%= post.body %></td>
-    <td><%= link_to 'Show', post, class: "btn" %></td>
-    <% if current_user && policy(post).update? %>
+    <td>
+      <%= link_to 'Show', post, class: "btn" %>
+    </td>
+
+      <% if current_user && policy(post).update? %>
       <td>
         <%= link_to 'Edit', edit_post_path(post), class: "btn" %>
       </td>
-      <p class="pull-right"><%= "Published" if post.published %></p>
-      <%= button_to 'Publish', post_path(post, post: { published: true }), method: :post, class: "btn btn-large" %>
+      <% end %>
 
-    <% end %>
-    <% if current_user && policy(post).destroy? %>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %>
-    <% end %>
+      <% if current_user && policy(post).publish? %>
+        <% if post.published %>
+          <p class= "pull-right"> Published </p>
+        <% else %>
+          <td><%= button_to 'Publish', post_path(post, post: { published: true }), method: :post, class: "btn" %></td>
+        <% end %>
+      <% end %>
+
+      <% if current_user && policy(post).destroy? %>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" %>
+      <% end %>
   </tr>
 <% end %>
 </table>
