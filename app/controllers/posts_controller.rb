@@ -4,10 +4,10 @@ class PostsController < ApplicationController
  # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(published: true)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
+    if current_user
+      @posts = policy_scope(Post)
+    else
+      @posts = Post.where(published: true)
     end
   end
 
@@ -59,6 +59,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    authorize @post
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -75,6 +76,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
+    authorize @post
     @post.destroy
 
     respond_to do |format|

@@ -1,5 +1,11 @@
- fp:
+fp:
   title: My first post
   body: Example details of post
   author: one
   published: true
+
+unpub:
+  title: Another Epic post
+  body: The magic happens here
+  author: author
+  published: false

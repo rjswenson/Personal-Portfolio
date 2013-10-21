@@ -3,7 +3,7 @@ require "test_helper"
 feature "Editting an existing post" do
   scenario "with valid changes" do
 
-    sign_in
+    sign_in(users(:one))
     visit post_path(posts(:fp).id)
 
     click_on 'Edit'

@@ -3,7 +3,7 @@ require "test_helper"
 feature "posting with valid information" do
   scenario "fill in and submit a new post" do
 
-    sign_in
+    sign_in(users(:one))
 
     visit posts_path
     click_on 'New Post'

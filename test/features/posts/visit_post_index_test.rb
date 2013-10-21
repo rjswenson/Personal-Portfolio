@@ -7,7 +7,7 @@ feature "The posts index" do
 
   scenario "it has a title" do
     visit posts_path
-    page.text.must_include "posts"
+    page.text.must_include "The More you Know"
   end
 
   scenario "it contains added posts" do
