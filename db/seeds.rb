@@ -13,8 +13,8 @@
 puts "Done: Editor Seeded. \n"
 
 10.times do
-  Post.create(title: Faker::Company.catch_phrase,
+  @post = Post.create(title: Faker::Company.catch_phrase,
               body: Faker::Lorem.paragraphs,
               published: false, author_id: @editor.id )
-  puts "Created sample post #{post.title} \n"
+  puts "Created sample post #{@post.title} \n"
 end

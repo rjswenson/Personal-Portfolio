@@ -25,9 +25,9 @@
 
       <% if current_user && policy(post).publish? %>
         <% if post.published %>
-          <p class= "pull-right"> Published </p>
+          <td><%= button_to 'UnPublish', post_path(post, post: { published: false }), method: :put, class: "btn" %></td>
         <% else %>
-          <td><%= button_to 'Publish', post_path(post, post: { published: true }), method: :post, class: "btn" %></td>
+          <td><%= button_to 'Publish', post_path(post, post: { published: true }), method: :put, class: "btn" %></td>
         <% end %>
       <% end %>
 
