@@ -33,16 +33,14 @@ feature "A user is flagged as author" do
   end
 
   scenario "they CANT publish their posts" do
-    sign_in(users(:author))
-    p = Post.create(title: "One", body: "Yup",
-                        published: false)
+    pending
+    # they shouldn't see a checkbox
+    # sign_in(users(:author))
 
-    p.publish!
-    click_link "Sign out"
-    visit posts_path
+    # visit edit_post_path(posts(:unpub))
+    # clicking the checkbox
+    # page.check('Published')
 
-    page.text.wont_include "One"
-    page.text.wont_include "Yup"
   end
 
   scenario "they CANT delete posts" do

@@ -4,11 +4,7 @@ class PostsController < ApplicationController
  # GET /posts
   # GET /posts.json
   def index
-    if current_user
-      @posts = policy_scope(Post)
-    else
-      @posts = Post.where(published: true)
-    end
+    @posts = policy_scope(Post)
   end
 
   # GET /posts/1
@@ -80,7 +76,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to posts_url, notice: "Post was deleted." }
       format.json { head :no_content }
     end
   end

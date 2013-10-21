@@ -10,6 +10,7 @@ gem 'flexslider'
 gem "devise", "~> 3.1.1"
 gem "simplecov", :require => false, :group => :test
 gem "pundit"
+gem "faker"
 
 group :test, :development do
   gem 'minitest-rails-capybara'

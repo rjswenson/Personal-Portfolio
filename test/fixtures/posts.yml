@@ -9,3 +9,9 @@ unpub:
   body: The magic happens here
   author: author
   published: false
+
+editor_pub:
+  title: An editor post
+  body: Which is published
+  author: editor
+  published: true

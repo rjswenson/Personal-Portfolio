@@ -59,6 +59,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     flexslider (2.2.0)
       sass-rails (>= 3.1.0)
     font-awesome-sass-rails (3.0.2.2)
@@ -176,6 +178,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.2.1)
   coffee-rails (~> 3.2.1)
   devise (~> 3.1.1)
+  faker
   flexslider
   font-awesome-sass-rails
   jquery-rails
