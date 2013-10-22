@@ -28,8 +28,8 @@ feature "a logged in editor" do
 
     visit post_path(posts(:fp))
 
-    page.has_selector('check_box', :text => "Approved")
-    page.check("Approved")
+    page.has_button?("Approve")
+    click_on "Approve"
 
     click_on "Sign out"
 
