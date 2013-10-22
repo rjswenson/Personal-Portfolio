@@ -1,31 +1,34 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <div class="comment_form">
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% @post.errors.full_messages.each do |msg| %>
+      <% @comment.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+<%= form_for(@comment) do |f| %>
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label :author, "Your name" %>
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :author_url, "Your Url" %>
+    <%= f.text_field :author_url %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "Your comment" %>
     <%= f.text_area :content %>
   </div>
-  <% if policy(Comment).publish? %>
-    <div class="field">
-      <%= f.label :approved %>
-      <%= f.check_box :approved %>
-    </div>
+  <%= f.hidden_field :referrer, value: request.referrer %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.hidden_field :author_email, value: current_user.email %>
   <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit comment for approval" %>
   </div>
 <% end %>

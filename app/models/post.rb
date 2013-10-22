@@ -10,4 +10,8 @@ class Post < ActiveRecord::Base
     self.published = true
     save!
   end
+
+  def authored_by?(user)
+    author == user
+  end
 end
