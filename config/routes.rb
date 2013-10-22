@@ -4,7 +4,8 @@ Portfolio::Application.routes.draw do
   # get "login", to: 'sessions#new', as: 'login'
   # get "logout", to: 'sessions#destroy', as: 'logout'
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
 
   resources :posts do
     resources :comments

@@ -29,6 +29,7 @@ feature "a logged in editor" do
     visit post_path(posts(:fp))
 
     page.has_button?("Approve")
+    save_and_open_page
     click_on "Approve"
 
     click_on "Sign out"
