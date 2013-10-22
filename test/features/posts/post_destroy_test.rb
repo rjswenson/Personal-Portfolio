@@ -13,6 +13,7 @@ feature "destroying a current post" do
 
     post_id = current_url.split('/').last
     click_on "Back"
+
     click_link "Destroy", href: "/posts/#{post_id}"
 
     page.wont_have_content "destroy this"

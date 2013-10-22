@@ -11,11 +11,16 @@
     </div>
   <% end %>
 
-<%= form_for(@comment) do |f| %>
+<%= form_for [@post, @comment] do |f| %>
   <div class="field">
     <%= f.label :author, "Your name" %>
     <%= f.text_field :author %>
   </div>
+  <div class="field">
+    <%= f.label :author_email, "Your email" %>
+    <%= f.text_field :author_email %>
+  </div>
+
   <div class="field">
     <%= f.label :author_url, "Your Url" %>
     <%= f.text_field :author_url %>
@@ -24,10 +29,10 @@
     <%= f.label :content, "Your comment" %>
     <%= f.text_area :content %>
   </div>
+
   <%= f.hidden_field :referrer, value: request.referrer %>
   <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.hidden_field :author_email, value: current_user.email %>
-  <% end %>
+
   <div class="actions">
     <%= f.submit "Submit comment for approval" %>
   </div>

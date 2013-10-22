@@ -13,6 +13,4 @@ Portfolio::Application.routes.draw do
   resources :projects
 
   root to: 'static_pages#index'
-
-  match "*unmatched_route", to: "application"
 end

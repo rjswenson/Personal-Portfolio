@@ -21,6 +21,7 @@ group :test, :development do
   gem 'turn'
   gem 'sqlite3'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 # Bundle edge Rails instead:

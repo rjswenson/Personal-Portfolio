@@ -22,9 +22,9 @@
   <% end %>
 </ul>
 
-<% if current_user && policy(comment).create? %>
+<% if current_user %>
   <h4> Add a Comment </h4>
-  <%= render '../comments/form' %>
+  <%= render '/comments/form' %>
 <% end %>
 
 

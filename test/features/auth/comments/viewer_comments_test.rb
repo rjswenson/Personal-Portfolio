@@ -6,10 +6,9 @@ feature "a logged in viewer" do
 
     visit post_path(posts(:fp))
 
-    click_on "Comment"
-    fill_in "author", with: "Mr. Bojangles"
+    fill_in "name", with: "Mr. Bojangles"
     fill_in "comment", with: "This post is great"
-    click_on "Comment"
+    click_on "Submit"
 
     visit post_path(posts(:fp))
 
@@ -23,10 +22,9 @@ feature "a logged in viewer" do
 
     visit post_path(posts(:fp))
 
-    click_on "Comment"
-    fill_in "author", with: "Mr. Bojangles"
+    fill_in "name", with: "Mr. Bojangles"
     fill_in "comment", with: "This post is great"
-    click_on "Comment"
+    click_on "Submit"
 
     visit post_path(posts(:fp))
 
