@@ -14,4 +14,5 @@ Portfolio::Application.routes.draw do
 
   root to: 'static_pages#index'
 
+  match "*unmatched_route", to: "application"
 end
