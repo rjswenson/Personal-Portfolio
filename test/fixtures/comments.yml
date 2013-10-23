@@ -1,24 +1,24 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  author: MyString
-  author_url: MyString
-  author_email: MyString
-  user_ip: MyString
-  user_agent: MyString
-  referrer: MyString
-  content: MyText
+author:
+  author: author
+  author_url: http://author.com
+  author_email: author@example.com
+  user_ip:
+  user_agent:
+  referrer: twitter
+  content: I totally agree
   approved: false
-  post: 
+  post:
 
-two:
-  author: MyString
-  author_url: MyString
-  author_email: MyString
-  user_ip: MyString
-  user_agent: MyString
-  referrer: MyString
-  content: MyText
-  approved: false
-  post: 
+approved:
+  author: editor
+  author_url: http://editor.com
+  author_email: editor1@example.com
+  user_ip:
+  user_agent:
+  referrer: twitter
+  content: An editor posted this!
+  approved: true
+  post:
