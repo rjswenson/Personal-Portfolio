@@ -5,7 +5,7 @@
 <% if current_user && current_user.editor? %>
   <tr>
     <% if comment.approved? %>
-      <td><%= button_to 'Delete', post_comment_path(comment), method: :delete, class: "btn" %></td>
+      <td><%= button_to 'Delete', post_comment_path(@post, comment), method: :delete, class: "btn" %></td>
     <% else %>
       <td><%= button_to 'Approve', post_comment_path(@post, comment, comment: { approved: true }), method: :put, class: "btn" %></td>
     <% end %>
