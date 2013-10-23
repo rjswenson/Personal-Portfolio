@@ -1,0 +1,17 @@
+
+
+<li><%= comment.content %></li>
+<li> By: <%= comment.author %> </li>
+<li><%= comment.author_email %></li>
+
+<% if current_user.editor? %>
+  <tr>
+    <% if comment.approved? %>
+      <td><%= button_to 'Delete', post_comment_path(comment), method: :delete, class: "btn" %></td>
+    <% else %>
+      <td><%= button_to 'Approve', post_comment_path(comment, comment: { approved: true }), method: :put, class: "btn" %></td>
+    <% end %>
+  </tr>
+# <% end %>
+
+

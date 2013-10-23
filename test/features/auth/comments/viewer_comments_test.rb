@@ -9,7 +9,9 @@ feature "a logged in viewer" do
     fill_in "name", with: "Mr. Bojangles"
     fill_in "comment", with: "This post is great"
     click_on "Submit"
+    click_on "Sign out"
 
+    sign_in(users(:one))
     visit post_path(posts(:fp))
 
     page.text.must_include "Mr. Bojangles"
@@ -29,6 +31,7 @@ feature "a logged in viewer" do
     visit post_path(posts(:fp))
 
     page.text.wont_include "Approved"
+    page.text.wont_include "Mr. Bojangles"
   end
 end
 

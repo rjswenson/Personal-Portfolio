@@ -13,27 +13,29 @@
   <b> By: </b> <%= @post.author.email %>
 </p>
 
+
+
 <ul>
   <% if @post.comments.any? %>
     <% @post.comments.each do |comment| %>
-      <% if comment.approved == true || current_user.editor? %>
 
-        <li><%= comment.content %></li>
-        <li> By: <%=comment.author %> </li>
-        <li><%= comment.author_email %></li>
+      <% if current_user.nil? %>
+        <% if comment.approved %>
+          <%= render comment %>
+        <% end %>
 
-        <% if current_user %>
+      <% elsif current_user.editor? %>
+        <%= render comment %>
 
-          <% if comment.approved == true %>
-            <td><%= button_to 'Remove', post_comment_path(comment, comment: { approved: false }), method: :put, class: "btn" %></td>
-          <% else %>
-            <td><%= button_to 'Approve', post_comment_path(comment, comment: { approved: true }), method: :put, class: "btn" %></td>
-          <% end %>
+      <% else %>
+        <% if comment.approved %>
+          <%= render comment %>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
 </ul>
+
 
 <% if current_user %>
   <h4> Add a Comment </h4>
