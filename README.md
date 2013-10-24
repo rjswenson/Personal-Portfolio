@@ -20,6 +20,10 @@ Day 2 - Static_Page Controller for home page set
 ![Day2 Static_Home](screens/Day2_homepage.png)
 
 
+Version
+-------
+0.1 - Secure and Functional (polymorphic comments, Devise protections, OAuth Twitter)
+
 
 Created
 -------
