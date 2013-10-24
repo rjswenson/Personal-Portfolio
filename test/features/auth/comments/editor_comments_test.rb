@@ -37,39 +37,39 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
-    fill_in "email", with: comments(:author).author_email
+    fill_in "name", with: comments(:deny_graffiti).author
+    fill_in "comment", with: comments(:deny_graffiti).content
+    fill_in "email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
 
-    page.text.must_include users(:author).name
-    page.text.must_include comments(:author).author_email
+    page.text.must_include comments(:deny_graffiti).author
+    page.text.must_include comments(:deny_graffiti).author_email
   end
 
   scenario "can approve comments on projects" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
-    fill_in "email", with: comments(:author).author_email
+    fill_in "name", with: comments(:deny_graffiti).author
+    fill_in "comment", with: comments(:deny_graffiti).content
+    fill_in "email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
     page.has_button?("Approve")
     click_on "Approve"
     click_on "Sign out"
     visit project_path(projects(:graffiti))
 
-    page.text.must_include users(:author).name
-    page.text.must_include comments(:author).author_email
+    page.text.must_include comments(:deny_graffiti).author
+    page.text.must_include comments(:deny_graffiti).author_email
   end
 
   scenario "can delete comments on projects" do
-    sign_in(user(:editor))
+    sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
-    fill_in "email", with: users(:author).email
+    fill_in "name", with: comments(:deny_graffiti).author
+    fill_in "comment", with: comments(:deny_graffiti).content
+    fill_in "email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
     page.has_button?("Approve")
     click_on "Approve"
@@ -77,7 +77,7 @@ feature "a logged in editor" do
     page.has_button?("Delete")
     click_on "Delete"
 
-    page.text.wont_include("#{users(:author).name}")
-    page.text.wont_include("#{comments(:author).content}")
+    page.text.wont_include comments(:deny_graffiti).author
+    page.text.wont_include comments(:deny_graffiti).content
   end
 end

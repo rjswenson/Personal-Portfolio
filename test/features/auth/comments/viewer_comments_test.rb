@@ -38,16 +38,16 @@ feature "a logged in viewer" do
     sign_in(users(:author))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
+    fill_in "name", with: comments(:deny_graffiti).author
+    fill_in "comment", with: comments(:deny_graffiti).content
     click_on "Submit"
     click_on "Sign out"
 
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    page.text.must_include "#{users(:author).name}"
-    page.text.must_include "#{comments(:author).content}"
+    page.text.must_include comments(:deny_graffiti).content
+    page.text.must_include comments(:deny_graffiti).author
   end
 end
 
@@ -66,29 +66,30 @@ feature "a non-logged viewer" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
+    fill_in "name", with: comments(:deny_graffiti).author
+    fill_in "comment", with: comments(:deny_graffiti).content
     click_on "Submit"
-    click_on "Approve"
+
+    find(".comment:last").click("Approve")
     click_on "Sign out"
 
     visit project_path(projects(:graffiti))
-    page.text.must_include "#{users(:author).name}"
-    page.text.must_include "#{comments(:author).content}"
+    page.text.must_include comments(:deny_graffiti).author
+    page.text.must_include comments(:deny_graffiti).content
   end
 
   scenario "CANT approve comments on projects" do
     sign_in(users(:author))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
+    fill_in "name", with: "Newly Signed in User"
+    fill_in "comment", with: "Some newly created comment"
     click_on "Submit"
     click_on "Sign out"
     visit project_path(projects(:graffiti))
 
-    page.text.wont_include "#{users(:author).name}"
-    page.text.wont_include "#{comments(:author).content}"
+    page.text.wont_include "Newly Signed in User"
+    page.text.wont_include "Some newly created comment"
     page.assert_no_selector('check_box', :text => "Approved")
   end
 

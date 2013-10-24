@@ -10,7 +10,7 @@ author:
   referrer: twitter
   content: I totally agree
   approved: false
-  post:
+  commentable: fp (Post)
 
 approved:
   author: editor
@@ -21,4 +21,20 @@ approved:
   referrer: twitter
   content: An editor posted this!
   approved: true
-  post:
+  commentable: fp (Post)
+
+apr_graffiti:
+  author: editor
+  author_url: http://editor.com
+  author_email: editor1@example.com
+  content: Sweet tags bro
+  approved: true
+  commentable: graffiti (Project)
+
+deny_graffiti:
+  author: editor
+  author_url: http://editor.com
+  author_email: editor1@example.com
+  content: Sweet tags bro
+  approved: false
+  commentable: graffiti (Project)

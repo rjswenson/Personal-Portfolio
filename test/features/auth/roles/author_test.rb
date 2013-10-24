@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "A user is flagged as author" do
-
   scenario "they can create posts" do
     sign_in(users(:author))
 
@@ -19,12 +18,12 @@ feature "A user is flagged as author" do
 
   scenario "they can update their posts" do
     sign_in(users(:author))
-    visit post_path(posts(:unpub).id)
+    visit post_path(posts(:unpub))
 
     click_on 'Edit'
     fill_in 'Title', with: "New Adventures"
     fill_in 'Body', with: "Here we go again"
-    click_on'Update Post'
+    click_on 'Update Post'
 
     visit posts_path
 
@@ -47,5 +46,4 @@ feature "A user is flagged as author" do
     page.text.wont_include "Destroy"
 
   end
-
 end
