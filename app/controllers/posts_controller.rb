@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @commentable = @post
+    @comments = policy_scope(@post.comments)
     @comment = Comment.new
 
     respond_to do |format|

@@ -15,34 +15,12 @@
 
 
 
-<ul>
-  <% if @post.comments.any? %>
-    <% @post.comments.each do |comment| %>
-
-      <% if current_user.nil? %>
-        <% if comment.approved %>
-          <%= render comment %>
-        <% end %>
-
-      <% elsif current_user.editor? %>
-        <%= render comment %>
-
-      <% else %>
-        <% if comment.approved %>
-          <%= render comment %>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-</ul>
+<%= render '/comments/show_comment' %>
 
 
-<% if current_user %>
-  <h4> Add a Comment </h4>
-  <%= render '/comments/form' %>
+<% if current_user && policy(@post).update? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
 
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'All Posts', posts_path %> |
+<%= link_to 'Front Page', root_path %>

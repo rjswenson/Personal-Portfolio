@@ -1,13 +1,17 @@
-<li><%= comment.content %></li>
-<li> By: <%= comment.author %> </li>
-<li><%= comment.author_email %></li>
+<div class="comment">
+  <li><%= comment.content %></li>
+  <li> By: <%= comment.author %> </li>
+  <li><%= comment.author_email %></li>
+</div>
 
 <% if current_user && current_user.editor? %>
   <tr>
-    <% if comment.approved? %>
-      <td><%= button_to 'Delete', post_comment_path(@post, comment), method: :delete, class: "btn" %></td>
-    <% else %>
-      <td><%= button_to 'Approve', post_comment_path(@post, comment, comment: { approved: true }), method: :put, class: "btn" %></td>
+    <% if policy(comment).destroy? %>
+      <td><%= button_to 'Delete', polymorphic_path([@commentable, comment]), method: :delete, class: "btn" %></td>
+    <% end %>
+
+    <% if comment.approved? == false && policy(comment).approved? %>
+      <td><%= button_to 'Approve', polymorphic_path([@commentable, comment], comment: { approved: true }), method: :put, class: "btn" %></td>
     <% end %>
   </tr>
-# <% end %>
+<% end %>

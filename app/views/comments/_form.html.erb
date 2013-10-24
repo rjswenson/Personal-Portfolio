@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<%= form_for [@post, @comment] do |f| %>
+<%= form_for [@commentable, @comment] do |f| %>
   <div class="field">
     <%= f.label :author, "Your name" %>
     <%= f.text_field :author %>
@@ -31,7 +31,6 @@
   </div>
 
   <%= f.hidden_field :referrer, value: request.referrer %>
-  <%= f.hidden_field :post_id, value: @post.id %>
 
   <div class="actions">
     <%= f.submit "Submit comment for approval" %>

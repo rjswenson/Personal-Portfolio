@@ -1,35 +1,43 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :load_commentable
 
   def create
-    @comment = Comment.new(params[:comment])
-    @post = @comment.post
+    @comment = @commentable.comments.new(params[:comment])
 
     if @comment.save
       flash[:success] = "Comment Created! Pending Approval."
-      redirect_to @post
+      redirect_to @commentable
     else
-      render template: "posts/show"
+      instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+      render template: "#{@resource}/show"
     end
   end
 
   def update
-    @comment = Comment.find(params[:id])
+    @comment = @commentable.comments.find(params[:id])
     if @comment.update_attributes(params[:comment])
       flash[:notice] = "Comment Approved!"
-      redirect_to @comment.post
+      redirect_to @commentable
     else
       flash[:alert] = "Comment not approved."
-      @post = @comment.post
-      render template: "posts/show"
+      instance_variable_set("@#{@resource.singularize}".to_sym, @commentable)
+      render template: "#{@resource}/show"
     end
   end
 
-  # def destroy
-  #   @comment = Comment.find(params[:id])
-  #   linky = @comment.post_id
-  #   @comment.destroy
-  #   flash[:notice] = "Comment Destroyed!"
-  #   redirect_to posts_path(linky)
-  # end
+  def destroy
+    @comment = @commentable.comments.find(params[:id])
+
+    @comment.destroy
+    flash[:notice] = "Comment Destroyed!"
+    redirect_to @commentable
+  end
+
+private
+
+  def load_commentable
+    @resource, id = request.path.split('/')[1,2]
+    @commentable = @resource.singularize.classify.constantize.find(id)
+  end
 end

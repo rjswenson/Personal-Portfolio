@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-
     if @project.save
       flash[:notice] = "Project was successfully added."
       redirect_to @project
@@ -22,6 +21,9 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @commentable = @project
+    @comments = policy_scope(@project.comments)
+    @comment = Comment.new
   end
 
   def edit

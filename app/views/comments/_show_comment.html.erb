@@ -1,0 +1,28 @@
+<ul>
+  <% if @comments.any? %>
+    <% @comments.each do |comment| %>
+
+      <% if current_user.nil? %>
+        <% if comment.approved %>
+          <%= render comment %>
+        <% end %>
+
+      <% elsif current_user.editor? %>
+        <%= render comment %>
+
+      <% else %>
+        <% if comment.approved %>
+          <%= render comment %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
+
+
+<% if current_user %>
+  <h4> Add a Comment </h4>
+  <%= render '/comments/form' %>
+<% else %>
+  <h6> <%= link_to "Sign in", new_user_session_path %> to write comments. </h6>
+<% end %>
