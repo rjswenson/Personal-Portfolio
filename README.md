@@ -22,7 +22,7 @@ Day 2 - Static_Page Controller for home page set
 
 Version
 -------
-0.1 - Secure and Functional (polymorphic comments, Devise protections, OAuth Twitter)
+0.1 - polymorphic comments, Devise protections, OAuth Twitter on posts/projects
 
 
 Created
