@@ -5,13 +5,14 @@
 </div>
 
 <% if current_user && current_user.editor? %>
-  <tr>
+  <div>
+    <ul>
     <% if policy(comment).destroy? %>
-      <td><%= button_to 'Delete', polymorphic_path([@commentable, comment]), method: :delete, class: "btn" %></td>
+      <li><%= button_to 'Delete', polymorphic_path([@commentable, comment]), method: :delete, class: "btn" %></li>
     <% end %>
 
     <% if comment.approved? == false && policy(comment).approved? %>
-      <td><%= button_to 'Approve', polymorphic_path([@commentable, comment], comment: { approved: true }), method: :put, class: "btn" %></td>
+      <li><%= button_to 'Approve', polymorphic_path([@commentable, comment], comment: { approved: true }), method: :put, class: "btn" %></li>
     <% end %>
-  </tr>
+  </div>
 <% end %>

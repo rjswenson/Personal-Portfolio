@@ -31,6 +31,7 @@
   </div>
 
   <%= f.hidden_field :referrer, value: request.referrer %>
+  <%= f.hidden_field :commentable_id, value: @commentable.id %>
 
   <div class="actions">
     <%= f.submit "Submit comment for approval" %>

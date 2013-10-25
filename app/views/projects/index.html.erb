@@ -9,4 +9,6 @@
 <% end %>
 <br/>
 
-<%= link_to "New project", new_project_path %>
+<% if current_user && current_user.editor? %>
+  <%= link_to "New project", new_project_path %>
+<% end %>
