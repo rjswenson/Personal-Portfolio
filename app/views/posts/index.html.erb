@@ -12,7 +12,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= post.body %></td>
+    <td><%= markdown(post.body).html_safe%></td>
     <td>
       <%= link_to 'Show', post, class: "btn" %>
     </td>
