@@ -13,10 +13,18 @@ module ApplicationHelper
   end
 
   def markdown(content)
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+    renderer = PygmentizeHTML
+    @markdown ||= Redcarpet::Markdown.new(renderer,
               autolink: true, space_after_headers: true,
               fenced_code_blocks: true, no_intra_emphasis: true,
               lax_spacing: true, no_intraemphasis: true)
     @markdown.render(content)
+  end
+
+  class PygmentizeHTML < Redcarpet::Render::HTML
+    def block_code(code, language = default)
+      require 'pygmentize'
+      Pygmentize.process(code, language)
+    end
   end
 end

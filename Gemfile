@@ -15,6 +15,7 @@ gem "omniauth-twitter"
 gem "figaro"
 gem 'rails-bootstrap-markdown'
 gem 'redcarpet'
+gem 'pygmentize'
 
 group :test, :development do
   gem 'minitest-rails-capybara'
