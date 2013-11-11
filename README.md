@@ -27,6 +27,8 @@ Version
 -------
 0.1 - polymorphic comments, Devise protections, OAuth Twitter on posts/projects
 
+0.2 - markdown within post body
+
 
 Created
 -------
