@@ -13,7 +13,6 @@ gem "pundit"
 gem "faker"
 gem "omniauth-twitter"
 gem "figaro"
-gem 'rails-bootstrap-markdown'
 gem 'redcarpet'
 gem 'pygmentize'
 

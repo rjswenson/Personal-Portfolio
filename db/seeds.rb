@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@editor = User.create(email: "editor1@example.com",
-                      password: "password123",
-                      password_confirmation: "password123",
-                      role: "editor")
-puts "Done: Editor Seeded. \n"
+# @editor = User.create(email: "editor1@example.com",
+#                       password: "password123",
+#                       password_confirmation: "password123",
+#                       role: "editor")
+# puts "Done: Editor Seeded. \n"
 
-10.times do
-  @post = Post.create(title: Faker::Company.catch_phrase,
-              body: Faker::Lorem.paragraphs,
-              published: false, author_id: @editor.id )
-  puts "Created sample post #{@post.title} \n"
-end
+# 10.times do
+#   @post = Post.create(title: Faker::Company.catch_phrase,
+#               body: Faker::Lorem.paragraphs,
+#               published: false, author_id: @editor.id )
+#   puts "Created sample post #{@post.title} \n"
+# end
