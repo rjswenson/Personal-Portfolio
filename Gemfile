@@ -13,6 +13,8 @@ gem "pundit"
 gem "faker"
 gem "omniauth-twitter"
 gem "figaro"
+gem 'rails-bootstrap-markdown'
+gem 'redcarpet'
 
 group :test, :development do
   gem 'minitest-rails-capybara'

@@ -5,6 +5,8 @@ Dynamic Rails Portfolio App
 By [Robin](http://github.com/rjswenson)
 
 [![wercker status](https://app.wercker.com/status/6750c90a6ccaa11613b68ad9d447092e/m "wercker status")](https://app.wercker.com/project/bykey/6750c90a6ccaa11613b68ad9d447092e)
+
+
 [Code Fellow](http://www.codefellows.org)
 
 

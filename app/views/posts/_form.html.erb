@@ -10,22 +10,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <% if policy(Post).publish? %>
-    <div class="field">
-      <%= f.label :published %>
-      <%= f.check_box :published %>
+  <div class="md-editor active">
+    <div class="md-header btn-toolbar">
     </div>
-  <% end %>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field md-editor active">
+      <div class="md-header btn-toolbar">
+      <%= f.label :body %><br />
+      <%= f.text_area :body, :data => {:provide => "markdown"}, rows: 10, class: "md-input", style: "resize: none;" %>
+    </div>
+    <% if policy(Post).publish? %>
+      <div class="field">
+        <%= f.label :published %>
+        <%= f.check_box :published %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>

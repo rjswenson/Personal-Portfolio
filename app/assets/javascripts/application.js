@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.flexslider
+//= require bootstrap-markdown
 //
 // Loads all Bootstrap javascrips
 //= require bootstrap
