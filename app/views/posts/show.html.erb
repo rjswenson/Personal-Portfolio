@@ -1,26 +1,16 @@
-
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Body:</b>
+<div class="post-body">
   <%= markdown(@post.body).html_safe %>
-</p>
+</div>
 
-<p id="author">
-  <b> By: </b> <%= @post.author.email %>
-</p>
+<div class="post-comments">
+  <%= render '/comments/show_comment' %>
+</div>
 
+<div class="post-nav">
+  <% if current_user && policy(@post).update? %>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+  <% end %>
 
-
-<%= render '/comments/show_comment' %>
-
-
-<% if current_user && policy(@post).update? %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-
-<%= link_to 'All Posts', posts_path %> |
-<%= link_to 'Front Page', root_path %>
+  <%= link_to 'All Posts', posts_path %> |
+  <%= link_to 'Front Page', root_path %>
+</div>
