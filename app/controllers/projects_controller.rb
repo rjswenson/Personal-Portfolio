@@ -12,7 +12,9 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
     if @project.save
       flash[:notice] = "Project was successfully added."
-      redirect_to @project
+      respond_to do |format|
+        format.html { redirect_to @project }
+        format.js
     else
       flash[:alert] = "Project could not be saved."
       render :new
