@@ -13,7 +13,6 @@ feature "Editting an existing post" do
 
     visit posts_path
 
-    page.text.must_include "New Adventures"
     page.text.must_include "Here we go again"
   end
 end

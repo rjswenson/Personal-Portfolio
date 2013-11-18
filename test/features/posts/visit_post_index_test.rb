@@ -15,7 +15,6 @@ feature "The posts index" do
       body: posts(:fp).body)
     visit posts_path
 
-    page.text.must_include posts(:fp).title
     page.text.must_include posts(:fp).body
   end
 end

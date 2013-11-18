@@ -5,9 +5,9 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit post_path(posts(:fp))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
-    fill_in "email", with: comments(:author).author_email
+    fill_in "Your name", with: users(:author).name
+    fill_in "Your comment", with: comments(:author).content
+    fill_in "Your email", with: comments(:author).author_email
     click_on "Submit"
 
     page.text.must_include users(:author).name
@@ -18,9 +18,9 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit post_path(posts(:fp))
 
-    fill_in "name", with: users(:author).name
-    fill_in "comment", with: comments(:author).content
-    fill_in "email", with: comments(:author).author_email
+    fill_in "Your name", with: users(:author).name
+    fill_in "Your comment", with: comments(:author).content
+    fill_in "Your email", with: comments(:author).author_email
     click_on "Submit"
 
     visit post_path(posts(:fp))
@@ -37,9 +37,9 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: comments(:deny_graffiti).author
-    fill_in "comment", with: comments(:deny_graffiti).content
-    fill_in "email", with: comments(:deny_graffiti).author_email
+    fill_in "Your name", with: comments(:deny_graffiti).author
+    fill_in "Your comment", with: comments(:deny_graffiti).content
+    fill_in "Your email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
 
     page.text.must_include comments(:deny_graffiti).author
@@ -50,9 +50,9 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: comments(:deny_graffiti).author
-    fill_in "comment", with: comments(:deny_graffiti).content
-    fill_in "email", with: comments(:deny_graffiti).author_email
+    fill_in "Your name", with: comments(:deny_graffiti).author
+    fill_in "Your comment", with: comments(:deny_graffiti).content
+    fill_in "Your email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
     page.has_button?("Approve")
     click_on "Approve"
@@ -67,9 +67,9 @@ feature "a logged in editor" do
     sign_in(users(:editor))
     visit project_path(projects(:graffiti))
 
-    fill_in "name", with: comments(:deny_graffiti).author
-    fill_in "comment", with: comments(:deny_graffiti).content
-    fill_in "email", with: comments(:deny_graffiti).author_email
+    fill_in "Your name", with: comments(:deny_graffiti).author
+    fill_in "Your comment", with: comments(:deny_graffiti).content
+    fill_in "Your email", with: comments(:deny_graffiti).author_email
     click_on "Submit"
     page.has_button?("Approve")
     click_on "Approve"

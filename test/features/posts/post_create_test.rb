@@ -12,7 +12,6 @@ feature "posting with valid information" do
     click_on 'Create Post'
 
     page.text.must_include "Post was successfully created"
-    page.text.must_include posts(:fp).title
     page.text.must_include posts(:fp).body
     page.text.must_include users(:one).email
   end

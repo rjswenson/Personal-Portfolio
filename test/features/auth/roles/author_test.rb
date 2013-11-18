@@ -11,9 +11,7 @@ feature "A user is flagged as author" do
     click_on 'Create Post'
 
     page.text.must_include "Post was successfully created"
-    page.text.must_include posts(:fp).title
     page.text.must_include posts(:fp).body
-    page.text.must_include users(:author).email
   end
 
   scenario "they can update their posts" do
