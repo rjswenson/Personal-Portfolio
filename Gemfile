@@ -25,6 +25,7 @@ group :test, :development do
   gem 'launchy'
   gem 'pry-rails'
   gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 # Bundle edge Rails instead:
