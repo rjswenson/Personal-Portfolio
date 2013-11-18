@@ -19,3 +19,6 @@
 
 # Ignore coverate reports
 /coverage
+
+# Ignore local uploads
+/public/uploads
