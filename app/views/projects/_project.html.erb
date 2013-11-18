@@ -1,4 +1,5 @@
 <div class="project" id="<%=dom_id(project) %>">
+  <%= image_tag project.image_url(:thumb).to_s %>
   <h3><%= project.name %></h3>
   <p><%= project.technologies_used %></p>
   <div class="nav">
