@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to @project }
         format.js
+      end
     else
       flash[:alert] = "Project could not be saved."
       render :new
@@ -52,5 +53,4 @@ class ProjectsController < ApplicationController
       redirect_to root_path
     end
   end
-
 end
