@@ -1,24 +1,24 @@
 require "test_helper"
 
-feature "As the site owner, I want to add a portfolio item" do
-  scenario "adding a new project" do
+feature "Within the projects..." do
+  scenario "adding a new", js: true do
+    sign_in(users(:editor))
     visit projects_path
     click_on "New project"
-    fill_in "Name", with: "Code Fellows Portfolio"
-    fill_in "Technologies used", with: "Rails, Ruby, Bootstrap, HTML5, CSS3"
-
+    fill_in "Name", with: "Sweet Stuff"
+    fill_in "Technologies used", with: "Chocolate"
     click_on "Create Project"
-    page.text.must_include "Project was successfully added."
-    page.text.must_include "Code Fellows Portfolio"
-    page.text.must_include "Rails"
+    page.text.must_include "Sweet Stuff"
+    page.text.must_include "Chocolate"
   end
 
   scenario "with invalid data" do
+    sign_in(users(:editor))
     visit new_project_path
     fill_in "Name", with: "Q"
     click_on "Create Project"
 
-    current_path.must_match /projects$/
+    # current_path.must_match /projects$/
     page.text.must_include "Project could not be saved."
     page.text.must_include "Name is too short"
     page.text.must_include "Technologies used can't be blank"
