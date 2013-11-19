@@ -1,6 +1,13 @@
 <%= render @projects %>
 
 <br/>
+
+<ul>
+  <%= direct_upload_form_for @uploader do |f| %>
+    <li><%= f.file_field :image %></li>
+    <li><%= f.submit "Upload Image" %></li>
+  <% end %>
+</ul>
 <% if current_user && current_user.editor? %>
-  <%= link_to "New project", new_project_path, remote: true, id: "new_link" %>
+  <%= link_to "New project", new_project_path, id: "new_link" %>
 <% end %>

@@ -1,5 +1,10 @@
 <div class="project" id="<%=dom_id(project) %>">
-  <%= image_tag project.image_url(:thumb).to_s %>
+  <% if project.image_processed? %>
+    <%= link_to image_tag(project.image_url(:thumb).to_s), project if project.image? %>
+  <% else %>
+    <em>Processing...</em>
+  <% end %>
+
   <h3><%= project.name %></h3>
   <p><%= project.technologies_used %></p>
   <div class="nav">

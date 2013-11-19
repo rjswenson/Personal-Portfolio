@@ -15,8 +15,13 @@ gem "omniauth-twitter"
 gem "figaro"
 gem 'redcarpet'
 gem 'pygmentize'
+
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
+gem 'unf'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 
 group :test, :development do
   gem 'minitest-rails-capybara'
